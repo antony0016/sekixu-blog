@@ -34,7 +34,7 @@ provider = "gitalk"
 
 [params.comments.gitalk]
 owner = "antony0016"
-admin = "antony0016"
+admin = ["antony0016"]
 repo = "https://github.com/antony0016/sekixu-blog-comment"
 clientID = "c847fb4dab9e4beb6911"
 clientSecret = "8e748c10584b376b8b5cea80d16c6ecb932ed2e4"
