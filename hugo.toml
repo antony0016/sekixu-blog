@@ -1,0 +1,4 @@
+baseURL = 'https://blog.sekixu.dev/'
+languageCode = 'zh-tw'
+title = 'SekiXu Dev Note'
+theme = 'hugo-theme-stack'
