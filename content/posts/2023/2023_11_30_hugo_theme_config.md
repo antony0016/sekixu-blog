@@ -1,6 +1,21 @@
-baseURL = "https://blog.sekixu.dev/"
++++
+title = 'hugo 主題設定檔'
+date = 2023-11-30T18:00:00+08:00
+draft = false
+categories = ['筆記']
+tags = ['hugo', 'theme', 'config']
++++
+
+## 前言
+
+原本以為設定檔只能在主題的 `config.yaml` 中設定，後來發現可以統一併到 `hugo.toml` 裡面，但是 stack 這個主題好像沒有提供 toml 語法的設定檔，所以我修改好了一份 toml 格式的設定檔。
+
+## 範本
+
+```toml
+baseURL = "https://sample.base-url.com/"
 languageCode = "zh-tw"
-title = "SekiXu Dev Note"
+title = "sample title"
 theme = "hugo-theme-stack"
 
 [params]
@@ -17,8 +32,8 @@ lastUpdated = "2006-01-02"
 
 [params.sidebar]
 compact = false
-emoji = "📭"
-subtitle = "Seki です、ウェブエンジニアをやています。"
+emoji = ""
+subtitle = ""
 
 [params.sidebar.avatar]
 enabled = true
@@ -33,11 +48,11 @@ enabled = true
 provider = "gitalk"
 
 [params.comments.gitalk]
-owner = "antony0016"
-admin = "antony0016"
-repo = "https://github.com/antony0016/sekixu-blog-comment"
-clientID = "c847fb4dab9e4beb6911"
-clientSecret = "8e748c10584b376b8b5cea80d16c6ecb932ed2e4"
+owner = ""
+admin = ""
+repo = ""
+clientID = ""
+clientSecret = ""
 
 [[params.widgets.homepage]]
 type = "search"
@@ -59,6 +74,7 @@ default = "light"
 [[menu.social]]
 identifier = "github"
 name = "GitHub"
-url = "https://github.com/antony0016/"
+url = "https://github.com/xxx/"
 [menu.social.params]
 icon = "brand-github"
+```

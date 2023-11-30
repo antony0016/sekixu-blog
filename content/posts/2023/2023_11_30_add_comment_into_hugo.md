@@ -14,7 +14,7 @@ tags = ['hugo', 'theme', 'stack', 'gitalk']
 
 1. 建立 GitHub OAuth App for Gitalk
 ⇒ [請參考 GitHub 官方教學](https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/creating-an-oauth-app)
-2. 在 `themes/hugo-theme-stack/config.yaml` 中修改以下內容
+2. 在 `config.yaml` or `hugo.toml` 中修改以下內容
 
 ```yaml
 params:
@@ -22,11 +22,24 @@ comments:
     enabled: true
     provider: gitalk
     gitalk:
-            owner: <github-username>
-            admin: <github-username>
-            repo: <github-repo-url>
-            clientID: <github-oauth-app-client-id>
-            clientSecret: <github-oauth-app-client-secret>
+        owner: <github-username>
+        admin: <github-username>
+        repo: <github-repo-url>
+        clientID: <github-oauth-app-client-id>
+        clientSecret: <github-oauth-app-client-secret>
+```
+
+```toml
+[params.comments]
+enabled = true
+provider = "gitalk"
+
+[params.comments.gitalk]
+owner = "<github-username>"
+admin = "<github-username>"
+repo = "<github-repo-url>"
+clientID = "<github-oauth-app-client-id>"
+clientSecret = "<github-oauth-app-client-secret>"
 ```
 
 ## 參考資源

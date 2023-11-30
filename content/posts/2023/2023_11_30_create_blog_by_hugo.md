@@ -1,6 +1,6 @@
 +++
 title = '用 Hugo 建立個人技術部落格'
-date = 2023-11-30T18:23:43+08:00
+date = 2023-11-30T17:00:00+08:00
 draft = false
 categories = ['筆記']
 tags = ['hugo']
@@ -63,11 +63,11 @@ hugo new content posts/<file-name>.md
 - 文章範本
 
 ```bash
----
-title: "My First Post"
-date: 2022-11-20T09:03:20-08:00
-draft: true
----
++++
+title = "My First Post"
+date = 2022-11-20T09:03:20-08:00
+draft = true
++++
 ## Introduction
 
 This is **bold** text, and this is *emphasized* text.
