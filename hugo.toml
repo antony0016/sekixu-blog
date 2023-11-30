@@ -33,7 +33,7 @@ enabled = true
 provider = "utterances"
 
 [params.comments.utterances]
-repo = "antony0016/sekixu-blog-comments"
+repo = "antony0016/sekixu-blog-comment"
 issueTerm = "og:title"
 theme = "github-dark"
 

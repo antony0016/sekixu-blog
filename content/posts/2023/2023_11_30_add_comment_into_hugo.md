@@ -19,20 +19,18 @@ tags = ['hugo', 'theme', 'stack', 'utteranc']
 params:
 comments:
     enabled: true
-    provider: gitalk
-    gitalk:
-        owner: <github-username>
-        admin: <github-username>
-        repo: <github-repo-url>
-        clientID: <github-oauth-app-client-id>
-        clientSecret: <github-oauth-app-client-secret>
+    provider: utterances
+    utterances:
+        repo: <github-username>/<github-repo-name>
+        issueTerm: og:title
+        theme: github-dark
 ```
 
 ```toml
 
 [params.comments]
 enabled = true
-provider = "gitalk"
+provider = "utterances"
 
 [params.comments.utterances]
 repo = "<github-username>/<github-repo-name>"
