@@ -39,6 +39,7 @@ repo = "sekixu-blog-comment"
 clientID = "c847fb4dab9e4beb6911"
 clientSecret = "8e748c10584b376b8b5cea80d16c6ecb932ed2e4"
 labels = ["Gitalk"]
+id = "location.pathname.split('posts')[1].substring(0, 49)"
 
 [[params.widgets.homepage]]
 type = "search"
