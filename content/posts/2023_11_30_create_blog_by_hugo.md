@@ -1,7 +1,9 @@
 +++
-title = '隨手筆記 - 用 Hugo 建立個人技術部落格'
-date = 2023-11-30T14:45:43+08:00
-draft = true
+title = '用 Hugo 建立個人技術部落格'
+date = 2023-11-30T18:23:43+08:00
+draft = false
+categories = ['筆記']
+tags = ['hugo']
 +++
 
 
