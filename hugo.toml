@@ -26,7 +26,7 @@ local = true
 src = "images/avatar.png"
 
 [params.article]
-readingTime = true
+readingTime = false
 
 [params.comments]
 enabled = true
