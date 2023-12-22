@@ -1,5 +1,5 @@
 +++
-title = '隨手筆記 - 使用 Traefik 作為反向代理伺服器'
+title = '使用 Traefik 作為反向代理伺服器'
 date = 2023-12-17T03:51:49+08:00
 draft = false
 tags = ['Docker', 'Traefik']

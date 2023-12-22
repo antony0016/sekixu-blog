@@ -1,5 +1,5 @@
 +++
-title = '隨手筆記 - 處理複雜的 import path'
+title = '處理複雜的 import path'
 date = 2023-12-22T21:03:49+08:00
 draft = false
 tags = ['Vue', 'Vite']

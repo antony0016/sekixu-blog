@@ -1,5 +1,5 @@
 +++
-title = '隨手筆記 - Vue3 with Vite 專案初始化'
+title = 'Vue3 with Vite 專案初始化'
 date = 2023-12-22T22:14:03+08:00
 draft = false
 tags = ['Vue', 'Vite']
