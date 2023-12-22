@@ -32,7 +32,7 @@ docker network create <network-name>
 
 ## 準備 Traefik 設定檔
 
-先寫好 Traefik 設定檔，這裡的設定檔沒記錯應該有參考到網路上的某篇文章，知道是哪篇的或是作者再麻煩聯繫我，我會標注的 QQ。
+先寫好 Traefik 設定檔，檔名為 traefik.yaml，要放在 /etc/traefik 中，這裡的設定檔沒記錯應該有參考到網路上的某篇文章，知道是哪篇的或是作者再麻煩聯繫我，我會標注的 QQ。
 
 ```yaml
 api:
