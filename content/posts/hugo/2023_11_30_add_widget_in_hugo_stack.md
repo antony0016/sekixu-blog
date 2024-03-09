@@ -1,8 +1,8 @@
 +++
-title = '在 Hugo 的 stack theme 加入搜尋的小工具'
+title = '在 Blog 中加入搜尋的小工具'
 date = 2023-11-30T18:30:00+08:00
 draft = false
-categories = ['筆記']
+categories = ['Blog']
 tags = ['hugo', 'theme', 'stack', 'widget']
 +++
 

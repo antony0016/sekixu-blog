@@ -2,7 +2,7 @@
 title = '建立我的第一個 EC2'
 date = 2023-12-01T20:55:22+08:00
 draft = false
-categories = ['筆記']
+categories = ['Server']
 tags = ['aws', 'ec2']
 +++
 ## 目的

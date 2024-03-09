@@ -2,8 +2,8 @@
 title = 'Vue3 with Vite 專案初始化'
 date = 2023-12-22T22:14:03+08:00
 draft = false
-tags = ['Vue', 'Vite']
-categories = ['筆記']
+categories = ['Frontend']
+tags = ['vue', 'vite']
 +++
 
 ## 撰文動機

@@ -2,8 +2,8 @@
 title = 'hugo 主題設定檔'
 date = 2023-11-30T18:00:00+08:00
 draft = false
-categories = ['筆記']
-tags = ['hugo', 'theme', 'config']
+categories = ['Blog']
+tags = ['hugo']
 +++
 
 ## 前言

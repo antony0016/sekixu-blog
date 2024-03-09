@@ -2,7 +2,7 @@
 title = '加入留言系統到 blog 中'
 date = 2023-11-30T19:41:43+08:00
 draft = false
-categories = ['筆記']
+categories = ['Blog']
 tags = ['hugo', 'theme', 'stack', 'utterances']
 +++
 

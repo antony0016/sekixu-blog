@@ -2,7 +2,7 @@
 title = '用 Hugo 建立個人技術部落格'
 date = 2023-11-30T17:00:00+08:00
 draft = false
-categories = ['筆記']
+categories = ['Blog']
 tags = ['hugo']
 +++
 
@@ -78,7 +78,7 @@ Visit the [Hugo](https://gohugo.io) website!
 - publish
 
 ```bash
-hudo
+hugo
 ```
 
 ## 主題內容設定

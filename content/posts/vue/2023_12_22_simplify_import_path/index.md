@@ -1,9 +1,9 @@
 +++
-title = '處理複雜的 import path'
+title = '在 Vite 專案中簡化複雜的 import path'
 date = 2023-12-22T21:03:49+08:00
 draft = false
-tags = ['Vue', 'Vite']
-categories = ['筆記']
+categories = ['Frontend']
+tags = ['vue', 'vite']
 +++
 
 ## 目的
