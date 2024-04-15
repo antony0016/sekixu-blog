@@ -10,3 +10,13 @@ git submodule add https://github.com/CaiJimmy/hugo-theme-stack/ themes/hugo-them
 
 - update theme config >> config.yaml
 - find params > mainSections and change it to `mainSections: ["posts"]`
+
+## Run
+
+```bash
+# run hugo server with draft
+hugo server -D
+
+# run hugo server without draft
+hugo server
+```
