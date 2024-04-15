@@ -6,3 +6,11 @@ tags = ['置頂']
 categories = ['置頂']
 weight = 1
 +++
+
+## 目的
+
+這個置頂文章用來作為一些重要的文章的索引，方便查找。
+
+## 系列
+
+- [RDBMS Basic](/posts/database/rdbms/2024_04_15_rdbms_basic/)
