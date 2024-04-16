@@ -3,7 +3,7 @@ title = '如何在軍中寫程式'
 date = 2024-03-09T13:51:49+08:00
 draft = false
 categories = ['Other']
-tags = ['docker', 'ssh', 'iphone']
+tags = []
 +++
 ## 撰文動機
 

@@ -1,0 +1,83 @@
+baseURL: "https://blog.sekixu.dev/"
+languageCode: "zh-tw"
+title: "SekiXu Dev Note"
+theme: ["PaperMod"]
+
+buildDrafts: false
+
+params:
+  title: SekiXu Dev Note
+  description: "SekiXu Dev Note"
+  keywords: [Blog, PaperMod]
+  author: SekiXu
+  # author: ["Me", "You"] # multiple authors
+  images: ["<link or path of image for opengraph, twitter-cards>"]
+  DateFormat: "2006-01-02"
+  defaultTheme: dark # dark, light, auto
+  disableThemeToggle: false
+
+  ShowReadingTime: false
+  ShowShareButtons: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: false
+  ShowCodeCopyButtons: true
+  ShowWordCount: true
+  ShowRssButtonInSectionTermList: false
+  UseHugoToc: true
+  disableSpecial1stPost: false
+  disableScrollToTop: false
+  comments: true
+  hidemeta: false
+  hideSummary: false
+  showtoc: false
+  tocopen: false
+
+  # assets:
+  #   # disableHLJS: true # to disable highlight.js
+  #   # disableFingerprinting: true
+  #   favicon: "<link / abs url>"
+  #   favicon16x16: "<link / abs url>"
+  #   favicon32x32: "<link / abs url>"
+  #   apple_touch_icon: "<link / abs url>"
+  #   safari_pinned_tab: "<link / abs url>"
+
+  label:
+    text: "SekiXu Dev Note"
+    icon: /apple-touch-icon.png
+    iconHeight: 35
+
+  # home-info mode
+  homeInfoParams:
+    Title: "SekiXu Dev Note"
+    Content: "Hi, i'm SekiXu, a software engineer. I write some notes about programming, technology, and life. Hope you like it."
+
+  socialIcons:
+    - name: github
+      url: "https://github.com/antony0016/"
+
+  cover:
+    hidden: true # hide everywhere but not in structured data
+    hiddenInList: true # hide on list pages and home
+    hiddenInSingle: true # hide on single page
+
+  # for search
+  # https://fusejs.io/api/options.html
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    limit: 10 # refer: https://www.fusejs.io/api/methods.html#search
+    keys: ["title", "permalink", "summary", "content"]
+menu:
+  main:
+    - identifier: categories
+      name: Categories
+      url: /categories/
+      weight: 10
+    - identifier: tags
+      name: Tags
+      url: /tags/
+      weight: 20
