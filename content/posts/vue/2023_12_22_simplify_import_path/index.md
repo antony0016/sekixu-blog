@@ -29,9 +29,6 @@ tags = ['vue', 'vite']
     }
   // 重點
   }
-},
-"include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue"],
-"references": [{"path": "./tsconfig.node.json"}]
 }
 ```
 
