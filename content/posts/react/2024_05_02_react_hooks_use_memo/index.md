@@ -71,7 +71,7 @@ export default function TodoList({ todos, tab, theme }) {
 }
 ```
 
-當想要避免大量重新渲染時，有兩種方式，用 useMemo 把元件先計算好之後存起來(block 1)，或是用 memo 做快取，這樣可以更簡單寫出想要的效果(block 2)。
+由於父元件重新渲染時，也會同時將所有子元件重新渲染，如果想要避免大量重新渲染時，有兩種方式，用 useMemo 把元件先計算好之後存起來(block 1)，或是用 memo 做個別元件的快取，這樣可以更簡單寫出想要的效果(block 2)。
 
 ```tsx
 // block 1
