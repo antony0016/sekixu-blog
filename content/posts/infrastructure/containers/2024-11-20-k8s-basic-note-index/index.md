@@ -18,13 +18,13 @@ aliases = ['/posts/k8s/2024_11_20_k8s_basic_note_index/', '/posts/k8s/2024_11_20
 在這個文章我會跳過服務建立的部分，大家可以動動腦袋把自己的服務編成 container 推上 docker hub 後一起實作看看，另外在每個步驟後面的括號都是我自己為了更好理解打上去的註解，如果哪邊有錯或是誤解的話可以跟我說~
 
 - 建立 pods(set of containers)
-    - [k8s - Pods](/posts/k8s/2024_11_20_k8s_pods/)
+  - [k8s - Pods](/posts/k8s/2024_11_20_k8s_pods/)
 - 建立 deployment(auto pods management)
-    - [k8s - development - replicas](/posts/k8s/2024_11_20_k8s_development_replicas/)
+  - [k8s - development - replicas](/posts/k8s/2024_11_20_k8s_development_replicas/)
 - 建立 service(pods proxy)
 
 - 建立 ingress controller(service gateway)
 
-
 ## 參考文件
+
 [guangzhengli/k8s-tutotials](https://github.com/guangzhengli/k8s-tutorials/)
