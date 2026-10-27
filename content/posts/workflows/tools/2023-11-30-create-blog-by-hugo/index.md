@@ -1,7 +1,7 @@
 +++
 title = '用 Hugo 建立個人技術部落格'
 date = 2023-11-30T17:00:00+08:00
-draft = false
+draft = true
 categories = ['Blog']
 tags = ['hugo']
 aliases = ['/posts/hugo/2023_11_30_create_blog_by_hugo/', '/posts/hugo/2023_11_30_create_blog_by_hugo.html']

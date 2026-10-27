@@ -1,7 +1,7 @@
 +++
 title = 'hugo 主題設定檔'
 date = 2023-11-30T18:00:00+08:00
-draft = false
+draft = true
 categories = ['Blog']
 tags = ['hugo']
 aliases = ['/posts/hugo/2023_11_30_hugo_theme_config/', '/posts/hugo/2023_11_30_hugo_theme_config.html']

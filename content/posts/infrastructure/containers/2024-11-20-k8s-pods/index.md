@@ -1,7 +1,7 @@
 +++
 title = "K8S - Pods"
 date = 2024-11-20T12:01:22+08:00
-draft = false
+draft = true
 categories = ['Server']
 tags = ['Kubernetes', 'k8s']
 aliases = ['/posts/k8s/2024_11_20_k8s_pods/', '/posts/k8s/2024_11_20_k8s_pods/index.html']

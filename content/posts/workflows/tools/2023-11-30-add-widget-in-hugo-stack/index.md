@@ -1,7 +1,8 @@
+
 +++
 title = '在 Blog 中加入搜尋的小工具'
 date = 2023-11-30T18:30:00+08:00
-draft = false
+draft = true
 categories = ['Blog']
 tags = ['hugo', 'theme', 'stack', 'widget']
 aliases = ['/posts/hugo/2023_11_30_add_widget_in_hugo_stack/', '/posts/hugo/2023_11_30_add_widget_in_hugo_stack.html']

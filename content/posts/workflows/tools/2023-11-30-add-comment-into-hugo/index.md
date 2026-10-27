@@ -1,7 +1,7 @@
 +++
 title = '加入留言系統到 blog 中'
 date = 2023-11-30T19:41:43+08:00
-draft = false
+draft = true
 categories = ['Blog']
 tags = ['hugo', 'theme', 'stack', 'utterances']
 aliases = ['/posts/hugo/2023_11_30_add_comment_into_hugo/', '/posts/hugo/2023_11_30_add_comment_into_hugo.html']

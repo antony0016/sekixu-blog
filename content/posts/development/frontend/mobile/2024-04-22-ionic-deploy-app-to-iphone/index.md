@@ -1,7 +1,7 @@
 +++
 title = 'Ionic 部署 - ios 版本'
 date = 2024-04-22T23:39:00+08:00
-draft = false
+draft = true
 categories = ['Frontend']
 tags = ['ionic', "capacitor"]
 aliases = ['/posts/ionic/2024_04_22_ionic_deploy_app_to_iphone/', '/posts/ionic/2024_04_22_ionic_deploy_app_to_iphone/index.html']

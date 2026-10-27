@@ -1,7 +1,7 @@
 +++
 title = 'Vue3 with Vite 專案初始化'
 date = 2023-12-22T22:14:03+08:00
-draft = false
+draft = true
 categories = ['Frontend']
 tags = ['vue', 'vite']
 aliases = ['/posts/vue/2023_12_22_vue3_project_setup/', '/posts/vue/2023_12_22_vue3_project_setup/index.html']
