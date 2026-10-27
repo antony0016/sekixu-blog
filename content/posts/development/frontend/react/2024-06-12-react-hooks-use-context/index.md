@@ -15,9 +15,9 @@ aliases = ['/posts/react/2024_06_12_react_hooks_use_context/', '/posts/react/202
 
 [官網](https://react.dev/reference/react/useContext)
 
-## 文章架構
+## 系列文章
 
-如上篇，我會按照官方文件的架構，首先講解定義，再用一些簡單的範例講解應該怎麼使用這些 Hooks，最後再講解一些容易犯錯的用例。
+React hooks 系列的其他文章在 [hooks 標籤](/tags/hooks/)。
 
 ## 定義
 
@@ -33,6 +33,8 @@ const SomeContext = createContext(initValue);
   - initValue: 傳入初始值，用來建立全域變數。
 - 傳出
   - SomeContext: 用來將值注入元件的本體。
+
+> React 19 之後可以直接寫 `<ThemeContext value={theme}>`，`<ThemeContext.Provider>` 是 React 19 以前的寫法。本文的範例沿用舊寫法，兩種在 React 19 都能用。
 
 ## 範例
 
@@ -243,8 +245,8 @@ function MyApp() {
 
 以下會有三個狀況會讓你無法正常使用 useContext。
 
-- 在同一個元件裡同時使用了 createContext 以及 useContext。
-  - 請將使用到 useContext 的區塊分到另外一個檔案，或是不要在這樣的狀況中使用 useContext。
+- 在同一個元件裡 render Provider，又在這個元件裡呼叫 useContext。
+  - useContext 只會往上找父層的 Provider，看不到自己這個元件 render 出來的 Provider，請把讀值的部分拆成子元件。
 - 沒有將使用到 useContext 的元件放在 provider 的子樹中。
   - 請將該元件放進子樹中。
 - 因為打包工具的問題，造成 useContext 取得不同的物件。

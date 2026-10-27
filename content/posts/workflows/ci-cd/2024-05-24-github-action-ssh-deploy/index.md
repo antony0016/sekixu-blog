@@ -2,7 +2,7 @@
 title = 'GitHub Actions 部署專案到伺服器上'
 date = 2024-05-24T13:36:49+08:00
 draft = false
-categories = ['CI/CD']
+categories = ['Infrastructure']
 tags = ["github actions", "ci/cd", "ssh"]
 aliases = ['/posts/github-action/2024_05_24_github_action_ssh_deploy/', '/posts/github-action/2024_05_24_github_action_ssh_deploy/index.html']
 +++
@@ -36,7 +36,7 @@ aliases = ['/posts/github-action/2024_05_24_github_action_ssh_deploy/', '/posts/
 
 ![Untitled](./4.png)
 
-## 建立 Secret 管理機敏資料
+## 建立 workflow
 
 請直接參考下面的 code，在專案根目錄建立 .github/workflows/deploy.yaml
 
@@ -61,29 +61,34 @@ jobs:
       # 開始寫這個 job 的操作步驟
         steps:
          
-         # 這個 step 用到了 appleboy 大大寫的 ssh-action@v1.0.3
+         # 這個 step 用到了 appleboy 大大寫的 ssh-action@v1.2.5
          # 用來連上我們自己的開發伺服器進行操作
         - name: Deploy
-          uses: appleboy/ssh-action@v1.0.3
+          uses: appleboy/ssh-action@v1.2.5
           with:
            # 寫入資訊告訴 ssh-action 要連線的參數
            # ${{ secrets.XXX }} 會帶入等等在 github 上設定的那些機敏資訊
             host: ${{ secrets.SSH_HOST }}
             port: ${{ secrets.SSH_PORT }}
             username: ${{ secrets.SSH_USER }}
-            password: ${{ secrets.SSH_PASSWORD }}
+            # 用 SSH key 登入，不用密碼
+            key: ${{ secrets.SSH_KEY }}
             # 接下來就是正常我們會在 server 上進行的那些操作了
             # | for multiline script
             script: |
                 cd /home/dev
                 # 檢查 repo 資料夾是否存在，不在的話使用 clone
                 # 已經 clone 過就使用 pull 更新伺服器上的檔案
+                # token 只放在這次指令的網址裡，不留在伺服器的 .git/config
+                REPO_URL=https://${{ secrets.GIT_ACCESS_TOKEN }}@github.com/<username>/<repo-name>.git
                 if [ ! -d "<repo-name>" ]; then
-                    git clone https://${{ secrets.GIT_ACCESS_TOKEN }}@github.com/<username>/<repo-name>.git
+                    git clone "$REPO_URL"
                     cd <repo-name>
+                    # clone 會把帶 token 的網址存成 origin，換成不帶 token 的網址
+                    git remote set-url origin https://github.com/<username>/<repo-name>.git
                 else
                     cd <repo-name>
-                    git pull
+                    git pull "$REPO_URL" master
                 fi
                 cd /home/dev
                 # 檢查是否成功，成功才繼續下一步處理相依性套件/函式庫下載
@@ -109,7 +114,7 @@ jobs:
 
 ![Untitled](./5.png)
 
-然後填入剛剛有用到的 SSH_HOST 進 Name, 以及對應 IP 進 Serect 中，之後的 SSH_PORT, SSH_USER, SSH_PASSWORD 以及 GIT_ACCESS_TOKEN 就按照一樣的步驟建立就完成了。
+然後填入剛剛有用到的 SSH_HOST 進 Name, 以及對應 IP 進 Serect 中，之後的 SSH_PORT, SSH_USER, SSH_KEY 以及 GIT_ACCESS_TOKEN 就按照一樣的步驟建立就完成了。SSH_KEY 填私鑰的內容，對應的公鑰要放進伺服器的 `~/.ssh/authorized_keys`。（下面的截圖是改用 SSH key 之前拍的，所以還看得到 SSH_PASSWORD。）
 
 ![Untitled](./6.png)
 
@@ -126,6 +131,8 @@ jobs:
 從我這次的 workflow 檔案中可以看到，都是很簡單的 bash 腳本，但是只做了少少的錯誤檢查，在其他需要長期維護的專案中，為了更穩健的提供服務，我們應該做好更多的錯誤檢查及測試。
 
 像是這次的建立過程中我就遇到了 curl 下載檔案出了問題，但是由於有下載了一個空檔案，所以 workflow 跑起來看起來是正確的狀況發生，一定要多注意！
+
+另外，這篇最早的版本用密碼登入伺服器，而且直接用帶 token 的網址 clone。git 會把 clone 的網址原封不動存進 `.git/config`，能登入伺服器的人都看得到 token。現在的版本改成 SSH key 登入，clone 完就把 origin 換成不帶 token 的網址，pull 時才帶 token。
 
 ## 結語
 

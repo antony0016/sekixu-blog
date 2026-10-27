@@ -2,7 +2,7 @@
 title = 'Clean Architecture'
 date = 2024-04-20T04:58:00+08:00
 draft = false
-categories = ['Software Engineering']
+categories = ['Architecture']
 tags = ['clean architecture', 'di', 'soc']
 aliases = ['/posts/software-engineering/2024_04_20_clean_archtecture/', '/posts/software-engineering/2024_04_20_clean_archtecture/index.html']
 +++

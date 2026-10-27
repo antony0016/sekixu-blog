@@ -37,7 +37,7 @@ with open(path, 'w', newline='', encoding='utf-8-sig') as csv_file:
 ```python
 with open(path, 'w', newline='', encoding='utf-8') as csv_file:
     # 寫入 UTF-8 BOM
-    csv_file.write(u'\ufeff'.encode('utf8'))
+    csv_file.write('\ufeff')
     csv_file.write(data)
 ```
 

@@ -2,7 +2,7 @@
 title = '用 terraform 建立一個 EC2 Server'
 date = 2024-05-23T23:30:49+08:00
 draft = false
-categories = ['Server']
+categories = ['Infrastructure']
 tags = ['terraform', 'aws', 'ec2']
 aliases = ['/posts/terraform/2024_05_23_create_ec2_server_using_terraform/', '/posts/terraform/2024_05_23_create_ec2_server_using_terraform/index.html']
 +++
@@ -11,6 +11,8 @@ aliases = ['/posts/terraform/2024_05_23_create_ec2_server_using_terraform/', '/p
 最近想認真學 CI / CD 相關技術，所以想先從 GitHub action 和 terraform 開始，而按照開發流程來說，先建立一台開發 / 實驗用的 Server 一定是 Hello world 一般的開始了，這篇文章會按照 terraform 建立一台開發用的 EC2 server。
 
 <https://developer.hashicorp.com/terraform/tutorials/aws-get-started>
+
+> 本文寫於 2024-05，用的是 AWS provider 4.x（現在已經到 6.x），AMI ID 也是當時大阪區的 ID。照著做之前，請換成目前的 provider 版本和你所在 region 的 AMI ID。
 
 ## 步驟
 
@@ -117,7 +119,7 @@ resource "aws_instance" "dev_server" {
 }
 ```
 
-所以透過以上的程式碼，我們就可以得到一個建立在 ap-northeast-3(Osaka)，以 t2.micro 規格運行 Amazon Linux 2 AMI 的 EC2 Instance 了。
+所以透過以上的程式碼，我們就可以得到一個建立在 ap-northeast-3(Osaka)，以 t2.micro 規格運行 Amazon Linux 2023 AMI 的 EC2 Instance 了。
 
 ## 建立 Server
 

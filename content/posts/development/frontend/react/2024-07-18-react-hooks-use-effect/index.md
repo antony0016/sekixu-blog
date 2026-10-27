@@ -12,9 +12,9 @@ aliases = ['/posts/react/2024_07_18_react_hooks_use_effect/', '/posts/react/2024
 
 [官網](https://react.dev/reference/react/useEffect)
 
-## 文章架構
+## 系列文章
 
-如上篇，我會按照官方文件的架構，首先講解定義，再用一些簡單的範例講解應該怎麼使用這些 Hooks，最後再講解一些容易犯錯的用例。
+React hooks 系列的其他文章在 [hooks 標籤](/tags/hooks/)。
 
 ## 定義
 
@@ -98,7 +98,7 @@ export default function App() {
     return () => {
       window.removeEventListener('pointermove', handleMove);
     };
-    // no dependencies: so setup and clean up only happend on component render.
+    // empty dependencies: setup runs on mount, clean up runs on unmount.
   }, []);
   // ...
 }
@@ -145,6 +145,17 @@ function Counter() {
 }
 ```
 
+改成傳入更新函式，就不需要把 count 放進依賴：
+
+```jsx
+useEffect(() => {
+  const intervalId = setInterval(() => {
+    setCount(c => c + 1); // ✅ 用前一個值計算，不需要讀 count
+  }, 1000);
+  return () => clearInterval(intervalId);
+}, []); // ✅ count 不再是依賴
+```
+
 ### 3. 依賴的使用方式 其三
 
 別傳入不需要的參數或是物件作為依賴，才不會意外觸發 useEffect。
@@ -170,6 +181,20 @@ function ChatRoom({ roomId }) {
   // ...
 ```
 
+把物件移進 Effect 裡面建立，依賴就只剩 roomId：
+
+```jsx
+useEffect(() => {
+  const options = { // ✅ 在 Effect 裡面建立物件
+    serverUrl: serverUrl,
+    roomId: roomId
+  };
+  const connection = createConnection(options);
+  connection.connect();
+  return () => connection.disconnect();
+}, [roomId]); // ✅ 只依賴 roomId
+```
+
 ### 4. 依賴的使用方式 其四
 
 不要使用函式作為依賴項傳入，因為每次都會產生不一樣的值，會一直觸發 useEffect，所以請不要使用函式作為依賴項傳入。
@@ -187,7 +212,7 @@ function ChatRoom({ roomId }) {
 
   useEffect(() => {
     const options = createOptions(); // It's used inside the Effect
-    const connection = createConnection();
+    const connection = createConnection(options);
     connection.connect();
     return () => connection.disconnect();
   }, [createOptions]); // 🚩 As a result, these dependencies are always different on a re-render

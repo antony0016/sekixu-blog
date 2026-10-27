@@ -2,7 +2,7 @@
 title = '微服務架構設計'
 date = 2024-05-20T06:35:00+08:00
 draft = false
-categories = ['Software Engineering']
+categories = ['Architecture']
 tags = ['micro service', 'monolithic', 'load balancer', 'message queue']
 aliases = ['/posts/software-engineering/2024_05_20_micro_service/', '/posts/software-engineering/2024_05_20_micro_service/index.html']
 +++

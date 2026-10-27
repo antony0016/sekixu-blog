@@ -2,7 +2,7 @@
 title = '如何在軍中寫程式'
 date = 2024-03-09T13:51:49+08:00
 draft = false
-categories = ['Other']
+categories = ['Life']
 tags = []
 aliases = ['/posts/other/2024_03_09_coding_in_army/', '/posts/other/2024_03_09_coding_in_army/index.html']
 +++

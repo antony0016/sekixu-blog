@@ -12,9 +12,9 @@ aliases = ['/posts/react/2024_05_02_react_hooks_use_memo/', '/posts/react/2024_0
 
 [官網](https://react.dev/reference/react/useMemo)
 
-## 文章架構
+## 系列文章
 
-如上篇，我會按照官方文件的架構，首先講解定義，再用一些簡單的範例講解應該怎麼使用這些 Hooks，最後再講解一些容易犯錯的用例。
+React hooks 系列的其他文章在 [hooks 標籤](/tags/hooks/)。
 
 ## 定義
 

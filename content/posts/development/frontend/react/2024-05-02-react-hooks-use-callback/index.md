@@ -12,9 +12,9 @@ aliases = ['/posts/react/2024_05_02_react_hooks_use_callback/', '/posts/react/20
 
 [官網](https://react.dev/reference/react/useCallback)
 
-## 文章架構
+## 系列文章
 
-如上篇，我會按照官方文件的架構，首先講解定義，再用一些簡單的範例講解應該怎麼使用這些 Hooks，最後再講解一些容易犯錯的用例。
+React hooks 系列的其他文章在 [hooks 標籤](/tags/hooks/)。
 
 ## 定義
 
@@ -70,30 +70,22 @@ const ShippingForm = memo(function ShippingForm({ onSubmit }) {
 如果單用 memo 不使用 useCallback 的話，每次父元件只要重新渲染，即使 handleSubmit 的內容都還是一樣的，handleSubmit 都還是會被重新產生，讓子元件的 memo 判定是不同 function 觸發子元件的重新渲染，所以一定要搭配著使用。
 
 ```tsx
-// ProductPage.js
-import { useCallback } from 'react';
-
+// 只用 memo、沒有 useCallback
 function ProductPage({ productId, referrer, theme }) {
-  const handleSubmit = useCallback((orderDetails) => {
+  // 每次 render 都會產生新的 handleSubmit
+  function handleSubmit(orderDetails) {
     post('/product/' + productId + '/buy', {
       referrer,
       orderDetails,
     });
-  }, [productId, referrer]);
-  // ... 
+  }
   return (
     <div className={theme}>
+      {/* 🔴 onSubmit 每次都是新的 function，memo 包起來的 ShippingForm 還是會重新 render */}
       <ShippingForm onSubmit={handleSubmit} />
     </div>
   );
 }
-
-// ShippingForm.js
-import { memo } from 'react';
-
-const ShippingForm = memo(function ShippingForm({ onSubmit }) {
-  // ...
-});
 ```
 
 ## 注意事項

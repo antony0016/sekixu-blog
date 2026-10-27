@@ -7,11 +7,10 @@ buildDrafts: false
 
 params:
   title: SekiXu Dev Note
-  description: "SekiXu Dev Note"
-  keywords: [Blog, PaperMod]
+  description: "SekiXu 的開發筆記：前端、後端、架構、基礎設施與開源專案的學習紀錄。"
+  keywords: [React, Flask, Terraform, Traefik, GitHub Actions, Gravitino]
   author: SekiXu
   # author: ["Me", "You"] # multiple authors
-  images: ["<link or path of image for opengraph, twitter-cards>"]
   DateFormat: "2006-01-02"
   defaultTheme: dark # dark, light, auto
   disableThemeToggle: false
@@ -29,7 +28,7 @@ params:
   comments: true
   hidemeta: false
   hideSummary: false
-  showtoc: false
+  showtoc: true
   tocopen: false
 
   # assets:
@@ -43,8 +42,6 @@ params:
 
   label:
     text: "SekiXu Dev Note"
-    icon: /apple-touch-icon.png
-    iconHeight: 35
 
   # home-info mode
   homeInfoParams:
@@ -81,3 +78,7 @@ menu:
       name: Tags
       url: /tags/
       weight: 20
+    - identifier: sekixu-dev
+      name: sekixu.dev
+      url: https://sekixu.dev/
+      weight: 30

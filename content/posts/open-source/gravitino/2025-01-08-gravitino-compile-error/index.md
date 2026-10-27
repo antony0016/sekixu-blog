@@ -2,7 +2,7 @@
 title = '第一次編譯開源專案 gravitino'
 date = 2025-01-08T01:29:00+08:00
 draft = false
-categories = ['OSS']
+categories = ['Open Source']
 tags = ['gravitino', 'oss']
 aliases = ['/posts/oss/2025_01_08_gravitino_compile_error/', '/posts/oss/2025_01_08_gravitino_compile_error/index.html']
 +++

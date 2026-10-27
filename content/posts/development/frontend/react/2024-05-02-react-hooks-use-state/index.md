@@ -13,21 +13,9 @@ aliases = ['/posts/react/2024_05_02_react_hooks_use_state/', '/posts/react/2024_
 
 [官網](https://react.dev/reference/react/useState)
 
-## 文章架構
+## 系列文章
 
-這篇會按照官方文件的架構，首先講解定義，再用一些簡單的範例講解應該怎麼使用這些 Hooks，最後再講解一些容易犯錯的用例。
-
-定義
-
-…
-
-範例
-
-…
-
-易錯用例
-
-…
+React hooks 系列的其他文章在 [hooks 標籤](/tags/hooks/)。
 
 ## 定義
 
@@ -65,7 +53,7 @@ function MyComponent() {
   }
   // name: 'Taylor'
   // handleNameChange('John')
-  // age: 'John'
+  // name: 'John'
   const handleNameChange = (newName) => {
    setName(newName)
   }

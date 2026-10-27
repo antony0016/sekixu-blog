@@ -11,11 +11,11 @@ aliases = ['/posts/python/2024_05_21_python_life_cycle/', '/posts/python/2024_05
 
 完全不懂 Flask life cycle 我們也可以使用 Flask 建立出一個完整的系統，但是瞭解了之後，我們可以將各種資源的調度放在 Flask life cycle 的各個節點中，這樣可以讓整個系統更有條理，以下內容皆整理自 Flask 官方文件，我也會寫一個範例 Repo 幫助讀者更有效地理解 Flask life cycle。
 
-<https://flask.palletsprojects.com/en/3.0.x/lifecycle/>
+<https://flask.palletsprojects.com/en/stable/lifecycle/>
 
 ## Flask handle request with WSGI server
 
-以下步驟節錄自 Python 官方文件
+以下步驟節錄自 Flask 官方文件
 
 1. Browser or other client makes HTTP request.
 2. WSGI server receives request.
@@ -38,12 +38,12 @@ aliases = ['/posts/python/2024_05_21_python_life_cycle/', '/posts/python/2024_05
 2. Flask 建立 Request 和 App Context 物件
     - Request Context 紀錄 Request 層級的內容，包含從 WSGI server 帶過來的 request 和 session。
     - App Context 紀錄 app 層級的內容，像是 Flask 實體本身 current_app，以及其他全域變數 g。
-3. 將 Request 和 App Context 物件存到 Local Context
-    - Local Context 以 Thread 為範圍，讓 Flask 可以儲存一些 life cycle 中會用到的資訊
+3. Push App Context 和 Request Context
+    - Push 之後，在這個 request 裡就可以使用 current_app、g、request 和 session。
 4. 預處理 URL Value
     - 透過 URL value preprocessor 可以為後續的節點服務，像是資料型態的預處理這類事情。
 5. before request
-    - 在進到 Handler 之前與之後的時機點，可以在這個時候處理 session。
+    - 在進到 Handler 之前呼叫。如果 before request 的函式回傳了值，這個值就直接當成 Response，不會再進 Handler。
 6. 按照路由讓應該接收請求的 handler 處理請求並回傳 Response
 7. after request
     - 在這裡可以在 Response 離開 Flask 之前，最後調整 Response 內容，Response 就會回傳給 WSGI server 並回傳給 Client side。
@@ -56,4 +56,4 @@ aliases = ['/posts/python/2024_05_21_python_life_cycle/', '/posts/python/2024_05
 
 ## 結語
 
-透過完整了解 Flack 的生命週期之後，我們可以有更多優化效能以及提升可維護性的著手點，像是可以在 before request 建立資料庫連線，並且在 after request 關閉資料庫連線，將程式各層好好切開，可以更好地維護我們的程式碼。
+透過完整了解 Flask 的生命週期之後，我們可以有更多優化效能以及提升可維護性的著手點，像是可以在 before request 建立資料庫連線，並且在 teardown 時關閉資料庫連線（Flask 官方教學也是用 `teardown_appcontext` 關閉連線），將程式各層好好切開，可以更好地維護我們的程式碼。

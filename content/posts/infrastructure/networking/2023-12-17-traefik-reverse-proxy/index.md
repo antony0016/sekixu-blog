@@ -2,7 +2,7 @@
 title = '使用 Traefik 作為反向代理伺服器'
 date = 2023-12-17T03:51:49+08:00
 draft = false
-categories = ['Server']
+categories = ['Infrastructure']
 tags = ['docker', 'traefik']
 aliases = ['/posts/traefik/2023_12_17_traefik_reverse_proxy/', '/posts/traefik/2023_12_17_traefik_reverse_proxy/index.html']
 +++
@@ -10,6 +10,8 @@ aliases = ['/posts/traefik/2023_12_17_traefik_reverse_proxy/', '/posts/traefik/2
 ## 前言
 
 使用 Traefik 可以很簡單的建立反向代理伺服器，並且自動獲取 SSL 證書，所以嘗試記錄一下。
+
+> 本文寫於 2023-12，用的是 Traefik v2.10。Traefik 現在已經是 v3，升級前請先看官方的 v2 到 v3 遷移文件。
 
 ## 預備步驟
 
@@ -59,9 +61,6 @@ certificatesResolvers:
       
       tlsChallenge: {}
 
-      # dnsChallenge:
-      #   provider: googledomains
-        
       # httpChallenge:
       #   entryPoint: https # 設定使用 HTTP Challenge 驗證
   
@@ -80,8 +79,6 @@ entryPoints:
 - networks 要設定連接到剛剛建立的 network，為了給其他容器加入用。
 
 ```yaml
-version: "3.3"
-
 services:
   traefik:
     image: "traefik:v2.10"
@@ -90,7 +87,6 @@ services:
       - ".env"
     ports:
       - "443:443"
-      - "8080:8080"
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
       - "$TRAEFIK_DATA:/etc/traefik:ro"

@@ -12,9 +12,9 @@ aliases = ['/posts/react/2024_06_12_react_hooks_use_ref/', '/posts/react/2024_06
 
 [官網](https://react.dev/reference/react/useRef)
 
-## 文章架構
+## 系列文章
 
-如上篇，我會按照官方文件的架構，首先講解定義，再用一些簡單的範例講解應該怎麼使用這些 Hooks，最後再講解一些容易犯錯的用例。
+React hooks 系列的其他文章在 [hooks 標籤](/tags/hooks/)。
 
 ## 定義
 
@@ -170,6 +170,8 @@ const MyInput = forwardRef(({ value, onChange }, ref) => {
 
 export default MyInput;
 ```
+
+> React 19 之後不需要 forwardRef 了，function component 可以直接從 props 拿到 `ref`，例如 `function MyInput({ value, onChange, ref })`。官方文件也寫了 forwardRef 之後會被標成 deprecated。
 
 ## 結語
 
